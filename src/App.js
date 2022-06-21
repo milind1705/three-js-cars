@@ -9,10 +9,13 @@ import Background from './components/Background';
 import Floor from './components/Floor'
 import Cars from './components/Cars';
 import CameraControls from './components/CameraControls';
+import CameraButtons from './components/CameraButtons';
+import {EffectComposer, DepthOfField, Bloom} from '@react-three/postprocessing';
 console.log(Canvas)
 function App() {
   return (
     <div style={{height:'100vh', width: '100vw' }}>
+      <CameraButtons />
       <Canvas style={{background:'black'}} camera={{position:[7,7,7]}}>
         
         <CameraControls />
@@ -28,7 +31,11 @@ function App() {
           <Background  />
         </Suspense>
         </Physics>
-
+        <EffectComposer >
+          <DepthOfField focusDistance={0} focalLength={0.2} bokehScale={2} height={480}/>
+          <Bloom />
+        </EffectComposer>
+        
       </Canvas>
     </div>
   );
