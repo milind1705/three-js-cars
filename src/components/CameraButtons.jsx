@@ -19,12 +19,12 @@ const style = {
 const CameraButtons = ()=>{
     const sets = {
         1 : {
-            cameraPos: [3,2,4],
+            cameraPos: [3,1,5],
             target: [4,0,0]
         },
 
         2 : {
-            cameraPos: [-2,2,5],
+            cameraPos: [-2,1,5],
             target: [-4,0,0]
         }
     }
